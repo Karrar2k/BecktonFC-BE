@@ -10,8 +10,19 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-// @TODO: Change the origin to the frontend URL
-app.use(cors({ origin: "https://beckton-fc-fe.vercel.app" }));
+
+// Define your CORS options
+const corsOptions = {
+  origin: "https://beckton-fc-fe.vercel.app",  // Your frontend URL
+  methods: ["GET", "POST", "OPTIONS"],  // Allow methods
+  allowedHeaders: ["Content-Type", "Authorization"],  // Allow headers
+};
+
+// Use CORS with the defined options
+app.use(cors(corsOptions));
+
+// Handle OPTIONS method explicitly
+app.options('*', cors(corsOptions));
 
 // Connects to the Mongo DB
 require("./db");
