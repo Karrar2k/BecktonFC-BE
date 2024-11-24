@@ -11,7 +11,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 // @TODO: Change the origin to the frontend URL
-app.use(cors({ origin: "*" }));
+app.use(cors({ origin: "https://beckton-fc-fe.vercel.app/" }));
 
 // Connects to the Mongo DB
 require("./db");
