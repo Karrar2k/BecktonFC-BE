@@ -7,6 +7,7 @@ firebase.initializeApp({
   storageBucket: process.env.FIREBASE_BUCKET
 });
 
+
 // Creating a bucket reference
 const bucket = firebase.storage().bucket();
 module.exports = bucket;
