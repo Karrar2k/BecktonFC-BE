@@ -13,7 +13,7 @@ app.use(express.urlencoded({ extended: false }));
 
 // Define your CORS options
 const corsOptions = {
-  origin: "https://beckton-fc-fe.vercel.app",  // Your frontend URL
+  origin: "*",  // Your frontend URL
   methods: ["GET", "POST", "OPTIONS"],  // Allow methods
   allowedHeaders: ["Content-Type", "Authorization"],  // Allow headers
 };
